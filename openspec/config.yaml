@@ -1,0 +1,49 @@
+schema: spec-driven
+
+context: |
+  SpecTrace is a small local Python 3.12 CLI mapping OpenSpec requirements to
+  pytest tests through explicit requirement references. Never infer links from
+  test names. A link is not evidence that a test passed or that coverage exists.
+  Use pytest and Ruff. No database, frontend, external APIs, or LLM integration.
+  The bootstrap-spectrace change is planning only until the user explicitly
+  approves implementation in a later request.
+
+rules:
+  specs:
+    - Give every requirement a stable explicit identifier and acceptance scenarios.
+    - Specify invalid input, deterministic output, and explicit link semantics.
+  design:
+    - Record assumptions, edge cases, alternatives, and scope exclusions.
+  tasks:
+    - Keep all implementation tasks unchecked until implementation is approved.
+
+# Project context (optional)
+# Add only constraints that should guide OpenSpec artifacts and workflows.
+# Include constraints an agent cannot infer by reading the code.
+# Keep general project documentation and discoverable codebase facts out.
+# Example:
+#   context: |
+#     Designs and tasks must cover Windows, macOS, and Linux
+#     Write all artifacts in Spanish
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always state what is out of scope
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing
