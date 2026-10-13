@@ -1,7 +1,7 @@
 # SpecTrace specification workflow
 
 This repository uses Fission AI OpenSpec 1.14.1 with the `spec-driven` schema and
-Codex support. The application is not implemented. The active planning change is
+Codex support. The application implementation is under review. The active change is
 [`bootstrap-spectrace`](changes/bootstrap-spectrace/proposal.md).
 
 ## Review the change
@@ -11,10 +11,10 @@ Codex support. The application is not implemented. The active planning change is
 - [Pytest references](changes/bootstrap-spectrace/specs/pytest-references/spec.md): static, explicit test links.
 - [Traceability report](changes/bootstrap-spectrace/specs/traceability-report/spec.md): mapping, Markdown output, CLI behavior.
 - [Design](changes/bootstrap-spectrace/design.md): assumptions, alternatives, and edge cases.
-- [Tasks](changes/bootstrap-spectrace/tasks.md): future implementation and verification work, all unchecked.
+- [Tasks](changes/bootstrap-spectrace/tasks.md): implementation and verification checklist.
 
-Implementation requires explicit user approval in a later request. Do not apply,
-sync, or archive this change as part of specification review.
+Implementation was explicitly approved after the specification PR merged. Keep
+this change unarchived and do not merge the implementation PR automatically.
 
 ## OpenSpec tooling
 
@@ -41,6 +41,7 @@ are committed under `.agents/skills`:
 - `$openspec-propose`: create proposal, specs, design, and tasks.
 - `$openspec-explore`: investigate ideas and clarify scope.
 - `$openspec-update-change`: revise an existing change.
+- `$openspec-verify-change`: verify implementation against the approved artifacts.
 - `$openspec-apply-change`: implement an approved change.
 - `$openspec-sync-specs`: reconcile approved delta specs with canonical specs.
 - `$openspec-archive-change`: archive a completed change.
@@ -48,6 +49,10 @@ are committed under `.agents/skills`:
 Codex discovers these skills from the checkout; a session started before
 initialization may need to be restarted or refreshed to list them in its UI.
 The CLI workflow and generated skill files have been verified independently.
+
+The optional verify workflow was added with `openspec config set profile custom`,
+`openspec config set workflows '["propose","explore","apply","update","sync","archive","verify"]'`,
+and `openspec update`. The generated skill is committed for other Codex sessions.
 
 The `specs/` directory is intentionally empty until implementation and the approved
 archive workflow establish canonical specifications. OpenSpec's status marks
