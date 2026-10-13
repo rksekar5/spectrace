@@ -175,7 +175,7 @@ def test_invalid_utf8_and_read_failure(write_file, monkeypatch):
 @pytest.mark.requirements("ST-CAT-002", "ST-CAT-003")
 def test_approved_change_is_an_added_only_catalog():
     root = Path(__file__).resolve().parents[1]
-    requirements = catalog(root / "openspec/changes/bootstrap-spectrace/specs")
+    requirements = catalog(root / "openspec/changes/archive/2026-10-13-bootstrap-spectrace/specs")
     assert len(requirements) == 18
     assert len({item.id for item in requirements}) == 18
 

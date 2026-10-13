@@ -4,8 +4,8 @@
 
 Select a UTF-8 Markdown file or a directory recursively containing files named
 `spec.md`. The default directory is `openspec/specs`; pending changes and archives
-are not automatically combined with it. Before this change is archived, select
-`openspec/changes/bootstrap-spectrace/specs` explicitly.
+are not automatically combined with it. To analyze an ADDED-only change or
+archive instead, select its `specs` directory explicitly.
 
 Canonical files use `## Requirements`; ADDED-only change files use
 `## ADDED Requirements`. MODIFIED, REMOVED, and RENAMED sections are rejected
