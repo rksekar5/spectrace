@@ -19,11 +19,11 @@ working directory. Each accepts one supported file or directory. `--output -`
 and omitting `--output` both write Markdown to stdout. `--help`, `report --help`,
 and `--version` work without project files.
 
-Canonical specs are intentionally still empty until this change is approved for
-archiving. For this checkout, use the pending ADDED-only specs:
+The approved canonical specifications are in `openspec/specs`. To check their
+explicit links to this checkout's tests:
 
 ```bash
-spectrace report --specs openspec/changes/bootstrap-spectrace/specs --tests tests --fail-on-unlinked
+spectrace report --fail-on-unlinked
 ```
 
 | Exit | Meaning |
@@ -75,12 +75,11 @@ and pytest runs in strict-marker mode.
 
 ## OpenSpec workflow
 
-The approved change is [bootstrap-spectrace](openspec/changes/bootstrap-spectrace/proposal.md).
-Its [design](openspec/changes/bootstrap-spectrace/design.md) and
-[tasks](openspec/changes/bootstrap-spectrace/tasks.md) guide implementation.
+The implemented and archived change is [bootstrap-spectrace](openspec/changes/archive/2026-10-13-bootstrap-spectrace/proposal.md).
+Its [design](openspec/changes/archive/2026-10-13-bootstrap-spectrace/design.md) and
+[tasks](openspec/changes/archive/2026-10-13-bootstrap-spectrace/tasks.md) record the approved implementation.
 Use the Codex `openspec-apply-change` skill for approved implementation and
-`openspec-verify-change` for verification. The current implementation request does
-not authorize merging or archiving the change.
+`openspec-verify-change` for verification of future changes.
 
 OpenSpec is authoring tooling only; it is not a Python runtime dependency.
 See [the workflow guide](openspec/README.md) for installation and commands.
